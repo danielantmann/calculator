@@ -13,6 +13,11 @@ export const globalStyles = StyleSheet.create({
     paddingBottom: 20,
   },
 
+  innerContainer: {
+    paddingHorizontal: 30,
+    paddingBottom: 20,
+  },
+
   mainResults: {
     color: Colors.textPrimary,
     fontSize: 70,
@@ -24,5 +29,30 @@ export const globalStyles = StyleSheet.create({
     fontSize: 40,
     textAlign: "right",
     fontWeight: 300,
+  },
+
+  row: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: 18,
+    paddingHorizontal: 10,
+  },
+
+  button: {
+    height: 80,
+    width: 80,
+    backgroundColor: Colors.darkGrey,
+    borderRadius: 100,
+    justifyContent: "center",
+    marginHorizontal: 10,
+  },
+
+  buttonText: {
+    textAlign: "center",
+    padding: 10,
+    fontSize: 30,
+    color: Colors.textPrimary,
+    fontWeight: 300,
+    fontFamily: "SpaceMono",
   },
 });
