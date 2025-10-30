@@ -12,9 +12,9 @@ const CustomText = ({ children, variant = "h1", ...props }: Props) => {
   return (
     <Text
       style={[styles.text, varianStyle]}
-      {...props}
       numberOfLines={1}
       adjustsFontSizeToFit
+      {...props}
     >
       {children}
     </Text>
