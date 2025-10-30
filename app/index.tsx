@@ -69,6 +69,20 @@ const CalculatorApp = () => {
           onPress={() => console.log("+")}
         />
       </View>
+      <View style={globalStyles.row}>
+        <CustomCalculatorButton
+          label="0"
+          doubleSize
+          onPress={() => console.log("0")}
+        />
+        <CustomCalculatorButton label="." onPress={() => console.log(".")} />
+
+        <CustomCalculatorButton
+          label="="
+          color={Colors.orange}
+          onPress={() => console.log("=")}
+        />
+      </View>
     </View>
   );
 };

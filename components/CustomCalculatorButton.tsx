@@ -7,12 +7,14 @@ interface Props {
   label: string;
   color?: string;
   blackText?: boolean;
+  doubleSize?: boolean;
   onPress: () => void;
 }
 const CustomCalculatorButton = ({
   label,
   color = Colors.darkGrey,
   blackText = false,
+  doubleSize = false,
   onPress,
 }: Props) => {
   const textColor = blackText ? Colors.blackText : Colors.textPrimary;
@@ -23,6 +25,7 @@ const CustomCalculatorButton = ({
         ...globalStyles.button,
         backgroundColor: color,
         opacity: pressed ? 0.8 : 1,
+        width: doubleSize ? 180 : 80,
       })}
       onPress={onPress}
     >
