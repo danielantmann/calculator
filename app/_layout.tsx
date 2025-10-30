@@ -1,16 +1,10 @@
 import { globalStyles } from "@/styles/global-styles";
 import { useFonts } from "expo-font";
-import * as NavigationBar from "expo-navigation-bar";
 import { Slot } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Platform, View } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-const isAndroid = Platform.OS === "android";
-
-if (isAndroid) {
-  NavigationBar.setBackgroundColorAsync("black");
-}
 const RootLayout = () => {
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
@@ -20,10 +14,15 @@ const RootLayout = () => {
     return null;
   }
   return (
-    <View style={globalStyles.background}>
-      <Slot />
-      <StatusBar style="light" />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView
+        style={globalStyles.background}
+        edges={["bottom", "left", "right"]}
+      >
+        <Slot />
+        <StatusBar style="light" />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 
